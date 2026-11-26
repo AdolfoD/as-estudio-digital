@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AS Estudio Digital</title>
+<meta name="description" content="AS Estudio Digital · Páginas web, apps e invitaciones digitales en Apan, Hidalgo. Detalles digitales que se recuerdan.">
+<link rel="icon" href="AS-circular-transparente.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* VOICE: elegante, cálida y sobria, como una papelería fina hecha a mano
+   IDEA: la página se comporta como una invitación de gala: marco fino, monograma, sobre
+   PICTURE: el monograma AS al centro y una escena de dispositivos (teléfono con invitación, navegador, app)
+   COLOUR and TYPE: azul marino de marca en toda la página, champaña como tinta; Cormorant Garamond + Montserrat
+   LAYOUT: portada centrada enmarcada, servicios en tres columnas, proceso, formulario que abre WhatsApp, pie */
+:root{color-scheme:dark;--navy:#1a2039;--navy2:#212a48;--navy3:#2a3456;--champ:#e6d9c0;--champ2:#c9b892;--soft:#a9adc0;--line:rgba(230,217,192,.28)}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--navy);color:var(--champ);font:16px/1.6 Montserrat,system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;line-height:1.08;text-wrap:balance;margin:0}
+h2{font-size:clamp(32px,4.4vw,48px)}
+h3{font-size:28px}
+p{margin:0}
+a{color:inherit}
+.wrap{max-width:1240px;margin:0 auto}
+.band{padding:clamp(56px,8vw,112px) max(5vw,16px)}
+.lead{color:var(--soft);max-width:60ch}
+.serif{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic}
+/* nav */
+nav{position:sticky;top:0;z-index:20;background:rgba(26,32,57,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px max(5vw,16px);flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-family:"Cormorant Garamond",serif;font-size:22px}
+.brand img{width:44px;height:44px;border-radius:50%;border:1px solid var(--line)}
+.links{display:flex;gap:6px;flex-wrap:wrap}
+.links a{text-decoration:none;font-size:14px;padding:10px 12px;border-radius:999px;color:var(--soft)}
+.links a:hover,.links a:focus-visible{color:var(--champ);background:var(--navy3)}
+/* botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:12px 26px;border-radius:999px;font:600 15px Montserrat,sans-serif;text-decoration:none;border:1px solid var(--champ);cursor:pointer;transition:background .25s,color .25s}
+.btn.solid{background:var(--champ);color:var(--navy)}
+.btn.solid:hover{background:#f3ead8}
+.btn.ghost{background:transparent;color:var(--champ)}
+.btn.ghost:hover{background:var(--navy3)}
+:focus-visible{outline:2px solid var(--champ);outline-offset:3px}
+/* portada */
+.hero{position:relative;padding:clamp(28px,4vw,56px) max(4vw,12px)}
+.frame{position:relative;max-width:1240px;margin:0 auto;border:1px solid var(--line);outline:1px solid var(--line);outline-offset:-10px;padding:clamp(40px,6vw,80px) clamp(18px,4vw,56px);text-align:center;overflow:hidden}
+.ghostS{position:absolute;top:50%;font:400 clamp(260px,40vw,520px)/1 "Cormorant Garamond",serif;color:var(--champ);opacity:.05;transform:translateY(-50%);pointer-events:none;user-select:none}
+.ghostS.l{left:-4%}.ghostS.r{right:-4%}
+.mono{width:clamp(180px,26vw,280px);aspect-ratio:1;margin:0 auto;border-radius:50%;box-shadow:0 30px 60px -20px rgba(0,0,0,.55),0 0 0 1px var(--line)}
+.divider{display:flex;align-items:center;justify-content:center;gap:12px;margin:28px auto 18px;color:var(--champ2)}
+.divider::before,.divider::after{content:"";width:min(120px,22vw);height:1px;background:var(--champ2);opacity:.7}
+.hero h1{font-size:clamp(40px,6vw,64px);margin-bottom:14px}
+.hero h1 em{font-weight:400}
+.hero .lead{margin:0 auto 30px;font-size:17px}
+.ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+/* escena de dispositivos */
+.scene{position:relative;max-width:980px;margin:clamp(48px,7vw,80px) auto 0;height:clamp(300px,42vw,440px)}
+.browser{position:absolute;left:0;top:8%;width:62%;height:84%;background:#f6f1e6;border-radius:14px;box-shadow:0 40px 70px -25px rgba(0,0,0,.6);overflow:hidden;color:var(--navy);text-align:left}
+.bar{height:30px;background:#e8dfcd;display:flex;align-items:center;gap:6px;padding:0 12px}
+.bar i{width:9px;height:9px;border-radius:50%;background:#c9b892}
+.bar span{margin-left:10px;flex:1;height:14px;border-radius:7px;background:#f6f1e6;font-size:10px;line-height:14px;padding-left:8px;color:#8a8170;overflow:hidden;white-space:nowrap}
+.site{padding:6% 7%}
+.site b{display:block;font:600 clamp(18px,2.6vw,30px)/1.1 "Cormorant Garamond",serif;margin-bottom:8px}
+.site .ln{height:8px;border-radius:4px;background:#d9cfbb;margin:7px 0;width:80%}
+.site .ln.s{width:55%}
+.site .row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:14%}
+.site .row div{aspect-ratio:4/3;border-radius:8px;background:linear-gradient(160deg,#2a3456,#1a2039)}
+.phone{position:absolute;right:4%;top:0;width:clamp(150px,22vw,220px);aspect-ratio:9/19;background:#0e1222;border-radius:30px;padding:9px;box-shadow:0 40px 70px -20px rgba(0,0,0,.7),0 0 0 1px #3a4466}
+.screen{height:100%;border-radius:22px;background:radial-gradient(circle at 50% 0%,#2e3860,#1a2039 70%);border:1px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:14px;gap:6px}
+.screen small{font-size:9px;letter-spacing:.2em;color:var(--champ2)}
+.screen .nm{font:italic 500 clamp(20px,2.8vw,28px)/1.05 "Cormorant Garamond",serif}
+.screen .amp{font:400 clamp(26px,3.4vw,36px)/1 "Cormorant Garamond",serif;color:var(--champ2)}
+.screen .dt{font-size:10px;color:var(--soft);margin-top:6px}
+.screen .rs{margin-top:10px;font-size:9px;border:1px solid var(--champ2);border-radius:999px;padding:5px 12px}
+.app{position:absolute;right:30%;bottom:0;width:clamp(150px,20vw,210px);background:var(--navy2);border:1px solid var(--line);border-radius:16px;padding:14px;text-align:left;box-shadow:0 30px 60px -20px rgba(0,0,0,.6)}
+.app p{font-size:12px;color:var(--soft)}
+.app strong{display:block;font:600 26px/1.1 "Cormorant Garamond",serif;margin:2px 0 8px}
+.meter{height:6px;border-radius:3px;background:var(--navy3);overflow:hidden}
+.meter i{display:block;height:100%;width:78%;background:var(--champ)}
+.sample{font-size:13px;color:var(--soft);margin-top:18px}
+/* servicios */
+.head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px 48px;align-items:end;margin-bottom:48px}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.card{background:var(--navy2);border:1px solid var(--line);border-radius:18px;padding:32px 28px;display:flex;flex-direction:column;gap:14px}
+.card svg{width:52px;height:52px;color:var(--champ)}
+.card p{color:var(--soft)}
+.card ul{margin:4px 0 0;padding:0;list-style:none;display:grid;gap:8px;font-size:15px}
+.card li{display:flex;gap:10px}
+.card li::before{content:"◇";color:var(--champ2);font-size:12px;line-height:24px}
+.card .btn{margin-top:auto;align-self:flex-start}
+/* invitaciones destacada */
+.feature{background:var(--champ);color:var(--navy)}
+.feature .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:center}
+.feature .lead{color:#4a4f66}
+.events{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 30px}
+.events span{border:1px solid var(--navy);border-radius:999px;padding:8px 16px;font-size:14px}
+.feature .btn.solid{background:var(--navy);color:var(--champ);border-color:var(--navy)}
+.feature .btn.solid:hover{background:var(--navy3)}
+.envelope{position:relative;aspect-ratio:4/3;max-width:460px;width:100%;margin:0 auto}
+.env{position:absolute;inset:22% 0 0;background:var(--navy);border-radius:12px;box-shadow:0 30px 60px -20px rgba(26,32,57,.6)}
+.env::before{content:"";position:absolute;inset:0;background:linear-gradient(to top right,transparent 49.6%,var(--navy2) 50%) left/50% 100% no-repeat,linear-gradient(to top left,transparent 49.6%,var(--navy2) 50%) right/50% 100% no-repeat;border-radius:12px}
+.letter{position:absolute;left:10%;right:10%;top:0;bottom:30%;background:#fbf7ef;border-radius:8px;border:1px solid #d9cfbb;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:12px;animation:rise 1.2s ease-out both}
+.letter small{font-size:11px;letter-spacing:.18em;color:#8a8170}
+.letter b{font:italic 500 clamp(24px,3.4vw,34px)/1.1 "Cormorant Garamond",serif}
+.seal{position:absolute;left:50%;top:58%;width:64px;height:64px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle at 35% 30%,#efe3c9,#bba673);display:grid;place-items:center;font:600 24px "Cormorant Garamond",serif;color:var(--navy);box-shadow:0 6px 14px rgba(0,0,0,.35)}
+@keyframes rise{from{transform:translateY(30%)}to{transform:none}}
+/* portafolio */
+.reels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(18px,3vw,40px)}
+.reel{display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center}
+.device{position:relative;width:100%;max-width:280px;aspect-ratio:9/19;background:#0e1222;border-radius:36px;padding:10px;box-shadow:0 40px 70px -25px rgba(0,0,0,.7),0 0 0 1px #3a4466}
+.device video{width:100%;height:100%;object-fit:cover;border-radius:27px;display:block;background:#0e1222}
+.snd{position:absolute;right:20px;bottom:20px;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:rgba(26,32,57,.8);color:var(--champ);cursor:pointer;display:grid;place-items:center}
+.snd svg{width:20px;height:20px}
+.reel h3{font-size:26px}
+.reel p{color:var(--soft);font-size:15px;max-width:30ch}
+@media(max-width:900px){.reels{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:minmax(240px,72%);overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px}.reel{scroll-snap-align:center}}
+/* app destacada */
+.appshow{margin-top:clamp(56px,8vw,96px);display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(28px,4vw,56px);align-items:center}
+.laptop{position:relative}
+.laptop .scr{background:#0e1222;border-radius:16px 16px 6px 6px;padding:10px;box-shadow:0 0 0 1px #3a4466}
+.laptop video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;background:#0e1222}
+.laptop .base{height:14px;margin:0 -4%;background:linear-gradient(#3a4466,#232b47);border-radius:0 0 14px 14px;box-shadow:0 30px 50px -20px rgba(0,0,0,.7)}
+.laptop .snd{bottom:22px;right:22px}
+.tag{display:inline-block;font-size:13px;border:1px solid var(--champ2);color:var(--champ2);border-radius:999px;padding:4px 12px;margin-bottom:14px}
+.appshow h3{font-size:clamp(30px,3.4vw,40px);margin-bottom:12px}
+.appshow p{color:var(--soft)}
+.roles{list-style:none;padding:0;margin:20px 0 26px;display:grid;gap:12px}
+.roles li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 12px;font-size:15px;color:var(--soft)}
+.roles b{color:var(--champ);font-weight:600}
+.roles li::before{content:"◇";color:var(--champ2);grid-row:span 2;line-height:24px}
+@media(min-width:901px){.appshow.rev .laptop{order:2}}
+@media(max-width:900px){.appshow{grid-template-columns:minmax(0,1fr)}}
+/* facebook */
+.fbicon{width:22px;height:22px;flex:none}
+.navfb{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:8px 16px;border-radius:999px;background:var(--champ);color:var(--navy);font:600 14px Montserrat,sans-serif;text-decoration:none}
+.navfb:hover{background:#f3ead8}
+.navfb .fbicon{width:18px;height:18px}
+.fbband{background:linear-gradient(135deg,#1877f2 0%,#1a2039 75%);border-block:1px solid var(--line)}
+.fbband .wrap{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:clamp(20px,4vw,48px);align-items:center}
+.fbbig{width:clamp(72px,10vw,110px);height:clamp(72px,10vw,110px);border-radius:28px;background:#fff;display:grid;place-items:center;box-shadow:0 20px 40px -15px rgba(0,0,0,.5)}
+.fbbig svg{width:60%;height:60%;color:#1877f2}
+.fbband h2{color:#fff}
+.fbband p{color:#e4e8f5;margin-top:10px;max-width:56ch}
+.fbbtn{display:inline-flex;align-items:center;gap:12px;min-height:56px;padding:14px 30px;border-radius:999px;background:#fff;color:#1877f2;font:700 16px Montserrat,sans-serif;text-decoration:none;white-space:nowrap;box-shadow:0 14px 30px -12px rgba(0,0,0,.5);transition:transform .2s}
+.fbbtn:hover{transform:translateY(-2px)}
+.contact .fbbtn{margin-top:26px}
+@media(max-width:900px){.fbband .wrap{grid-template-columns:minmax(0,1fr);justify-items:start}}
+@media(max-width:600px){.navfb span{display:none}.navfb{padding:8px 12px}}
+/* proceso */
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:1px solid var(--line)}
+.step{padding:28px 24px 8px 0;position:relative}
+.step::before{content:"";position:absolute;top:-6px;left:0;width:11px;height:11px;transform:rotate(45deg);background:var(--navy);border:1px solid var(--champ2)}
+.step h3{font-size:26px;margin:6px 0 10px}
+.step p{color:var(--soft);font-size:15px}
+.step .serif{color:var(--champ2);font-size:20px}
+/* contacto */
+.contact{background:var(--navy2);border-top:1px solid var(--line)}
+.contact .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(32px,5vw,72px)}
+.info{display:grid;gap:18px;margin-top:28px}
+.info div{display:flex;gap:14px;align-items:flex-start}
+.info svg{flex:none;width:22px;height:22px;margin-top:2px;color:var(--champ2)}
+form{display:grid;gap:16px;background:var(--navy);border:1px solid var(--line);border-radius:18px;padding:clamp(22px,3vw,36px)}
+label{display:grid;gap:6px;font-size:14px;color:var(--soft)}
+input,select,textarea{font:16px Montserrat,sans-serif;color:var(--champ);background:var(--navy2);border:1px solid var(--line);border-radius:10px;padding:12px 14px;min-height:48px;width:100%}
+textarea{min-height:110px;resize:vertical}
+select option{background:var(--navy)}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--champ);outline-offset:1px}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}
+#ok{font-size:14px;color:var(--champ2);min-height:20px}
+footer{border-top:1px solid var(--line);padding:36px max(5vw,16px);text-align:center;color:var(--soft);font-size:14px}
+footer .serif{font-size:22px;color:var(--champ);display:block;margin-bottom:6px}
+@media(max-width:900px){.cards{grid-template-columns:minmax(0,1fr)}.steps{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 24px}.head,.feature .wrap,.contact .wrap{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:600px){.links{display:none}.scene{height:360px}.browser{width:92%;height:62%;top:0}.phone{right:0;top:auto;bottom:0;width:150px}.app{display:none}.steps{grid-template-columns:minmax(0,1fr)}.two{grid-template-columns:minmax(0,1fr)}.ghostS{display:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.letter{animation:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#inicio"><img src="AS-circular-transparente.png" alt="">AS Estudio Digital</a>
+    <div class="links">
+      <a href="#servicios">Servicios</a>
+      <a href="#invitaciones">Invitaciones</a>
+      <a href="#portafolio">Portafolio</a>
+      <a href="#proceso">Cómo trabajo</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+    <a class="navfb fb" href="#"><svg class="fbicon" viewBox="0 0 24 24" fill="currentColor"><path d="M14 8V6.3c0-.8.2-1.3 1.4-1.3H17V2.2c-.3 0-1.3-.2-2.5-.2C12 2 10.5 3.5 10.5 6.1V8H8v3.2h2.5V22H14V11.2h2.6L17 8z"/></svg><span>Facebook</span></a>
+  </div>
+</nav>
+
+<header class="hero" id="inicio">
+  <div class="frame">
+    <span class="ghostS l" aria-hidden="true">S</span>
+    <span class="ghostS r" aria-hidden="true">S</span>
+    <img class="mono" src="AS-circular-transparente.png" alt="Monograma AS · Web, apps, invitaciones">
+    <div class="divider" aria-hidden="true">◇</div>
+    <h1>Detalles digitales <em class="serif">que se recuerdan</em></h1>
+    <p class="lead">Diseño y desarrollo páginas web, apps e invitaciones digitales con un acabado elegante y personal. Desde Apan, Hidalgo, para negocios y celebraciones de todo México.</p>
+    <div class="ctas">
+      <a class="btn solid wa" href="#contacto">Cotiza por WhatsApp</a>
+      <a class="btn ghost fb" href="#"><svg class="fbicon" viewBox="0 0 24 24" fill="currentColor"><path d="M14 8V6.3c0-.8.2-1.3 1.4-1.3H17V2.2c-.3 0-1.3-.2-2.5-.2C12 2 10.5 3.5 10.5 6.1V8H8v3.2h2.5V22H14V11.2h2.6L17 8z"/></svg>Síguenos en Facebook</a>
+    </div>
+
+    <div class="scene" aria-hidden="true">
+      <div class="browser">
+        <div class="bar"><i></i><i></i><i></i><span>tunegocio.com</span></div>
+        <div class="site">
+          <b>Café La Esquina</b>
+          <div class="ln"></div><div class="ln s"></div>
+          <div class="row"><div></div><div></div><div></div></div>
+        </div>
+      </div>
+      <div class="app">
+        <p>Pedidos de hoy</p>
+        <strong>24 entregas</strong>
+        <div class="meter"><i></i></div>
+      </div>
+      <div class="phone">
+        <div class="screen">
+          <small>NUESTRA BODA</small>
+          <span class="nm">Sofía</span>
+          <span class="amp">&amp;</span>
+          <span class="nm">Daniel</span>
+          <span class="dt">Sábado 14 de marzo</span>
+          <span class="rs">Confirmar asistencia</span>
+        </div>
+      </div>
+    </div>
+    <p class="sample">Diseños de muestra con nombres ficticios.</p>
+  </div>
+</header>
+
+<section class="band" id="servicios">
+  <div class="wrap">
+    <div class="head">
+      <h2>Lo que puedo crear <span class="serif">para ti</span></h2>
+      <p class="lead">Cada proyecto se diseña a la medida: escucho lo que necesitas, propongo una idea clara y la llevo hasta que esté publicada y funcionando.</p>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="9" width="38" height="28" rx="3"/><path d="M5 15h38M18 43h12M24 37v6"/><circle cx="9" cy="12" r=".8" fill="currentColor"/><circle cx="12" cy="12" r=".8" fill="currentColor"/></svg>
+        <h3>Páginas web</h3>
+        <p>Sitios profesionales que presentan tu negocio y te ayudan a conseguir clientes.</p>
+        <ul><li>Diseño adaptado a celular</li><li>Botón directo a WhatsApp</li><li>Ubicación, catálogo y redes</li><li>Dominio y publicación</li></ul>
+        <a class="btn ghost wa" data-s="Página web" href="#contacto">Quiero mi página</a>
+      </article>
+      <article class="card">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="14" y="4" width="20" height="40" rx="4"/><path d="M21 39h6"/><rect x="18" y="11" width="5" height="5" rx="1"/><rect x="25" y="11" width="5" height="5" rx="1"/><rect x="18" y="18" width="5" height="5" rx="1"/><rect x="25" y="18" width="5" height="5" rx="1"/></svg>
+        <h3>Apps</h3>
+        <p>Aplicaciones a la medida para organizar tu trabajo o dar un mejor servicio.</p>
+        <ul><li>Pedidos, citas y reservaciones</li><li>Paneles para administrar</li><li>Para Android, iPhone y web</li><li>Soporte después de entregar</li></ul>
+        <a class="btn ghost wa" data-s="App" href="#contacto">Platiquemos tu idea</a>
+      </article>
+      <article class="card">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="12" width="38" height="26" rx="3"/><path d="M5 14l19 13 19-13"/><circle cx="24" cy="27" r="4"/></svg>
+        <h3>Invitaciones digitales</h3>
+        <p>Invitaciones elegantes que se envían por WhatsApp y se abren en cualquier celular.</p>
+        <ul><li>Música, galería y cuenta regresiva</li><li>Ubicación con un toque</li><li>Confirmación de asistencia</li><li>Video para estados y reels</li></ul>
+        <a class="btn ghost wa" data-s="Invitación digital" href="#contacto">Diseñar mi invitación</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band feature" id="invitaciones">
+  <div class="wrap">
+    <div>
+      <h2>Invitaciones que <span class="serif">emocionan</span> antes del gran día</h2>
+      <p class="lead" style="margin-top:18px">Tus invitados reciben un enlace, lo abren y viven la primera parte de tu celebración: los nombres, la fecha, la música, el lugar y un botón para confirmar. Sin imprimir, sin perder detalle.</p>
+      <div class="events"><span>Bodas</span><span>XV años</span><span>Bautizos</span><span>Primera comunión</span><span>Cumpleaños</span><span>Baby shower</span><span>Graduaciones</span></div>
+      <a class="btn solid wa" data-s="Invitación digital" href="#contacto">Cotizar mi invitación</a>
+    </div>
+    <div class="envelope" aria-hidden="true">
+      <div class="env"></div>
+      <div class="letter"><small>ESTÁS INVITADO</small><b>Mis XV años</b><small>Valentina</small></div>
+      <div class="seal">AS</div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="portafolio">
+  <div class="wrap">
+    <div class="head">
+      <h2>Algunos de mis <span class="serif">diseños</span></h2>
+      <p class="lead">Invitaciones diseñadas desde cero con los colores, la música y el estilo de cada evento, y apps hechas a la medida. Toca el ícono de bocina para escuchar.</p>
+    </div>
+    <div class="reels">
+      <figure class="reel" style="margin:0">
+        <div class="device">
+          <video src="videos/Boda-Vino-Reel.mp4" poster="videos/Boda-Vino-Reel.jpg" muted loop playsinline preload="metadata" aria-label="Invitación digital de boda"></video>
+          <button class="snd" type="button" aria-label="Activar sonido"></button>
+        </div>
+        <h3>Boda · <span class="serif">Vino</span></h3>
+        <p>Fotografía en blanco y negro con tipografía caligráfica y detalles dorados.</p>
+      </figure>
+      <figure class="reel" style="margin:0">
+        <div class="device">
+          <video src="videos/XV-Mariposas-Reel.mp4" poster="videos/XV-Mariposas-Reel.jpg" muted loop playsinline preload="metadata" aria-label="Invitación digital de XV años"></video>
+          <button class="snd" type="button" aria-label="Activar sonido"></button>
+        </div>
+        <h3>XV años · <span class="serif">Mariposas</span></h3>
+        <p>Flores rosadas, mariposas doradas animadas y marco ovalado para la foto.</p>
+      </figure>
+      <figure class="reel" style="margin:0">
+        <div class="device">
+          <video src="videos/Bautizo-Azul.mp4" poster="videos/Bautizo-Azul.jpg" muted loop playsinline preload="metadata" aria-label="Invitación digital de bautizo"></video>
+          <button class="snd" type="button" aria-label="Activar sonido"></button>
+        </div>
+        <h3>Bautizo · <span class="serif">Azul</span></h3>
+        <p>Tonos azul y marfil, paloma y ramas de olivo en un diseño tierno y limpio.</p>
+      </figure>
+    </div>
+
+    <div class="appshow">
+      <div class="laptop">
+        <div class="scr" style="position:relative">
+          <video src="videos/mandaditos-demo.mp4" poster="videos/mandaditos-demo.jpg" muted loop playsinline preload="metadata" aria-label="Demostración de la app Mandaditos"></video>
+          <button class="snd" type="button" aria-label="Activar sonido"></button>
+        </div>
+        <div class="base"></div>
+      </div>
+      <div>
+        <span class="tag">App en desarrollo</span>
+        <h3>Mandaditos · <span class="serif">app de mandados</span></h3>
+        <p>Una app para pedir lo que necesites y recibirlo en tu puerta, con tres experiencias en una sola plataforma para Android y iPhone.</p>
+        <ul class="roles">
+          <li><b>Cliente</b><span>Pide lo que necesita y sigue su pedido en tiempo real.</span></li>
+          <li><b>Repartidor</b><span>Recibe la alerta al instante y acepta con un solo toque.</span></li>
+          <li><b>Dueño</b><span>Ve ventas, su equipo en el mapa, tiempos de entrega y horas pico.</span></li>
+        </ul>
+        <a class="btn solid wa" data-s="App" href="#contacto">Quiero una app así</a>
+      </div>
+    </div>
+
+    <div class="appshow rev">
+      <div class="laptop">
+        <div class="scr" style="position:relative">
+          <video src="videos/willdex-demo.mp4" poster="videos/willdex-demo.jpg" muted loop playsinline preload="metadata" aria-label="Recorrido por la página web de WILLDEX"></video>
+          <button class="snd" type="button" aria-label="Activar sonido"></button>
+        </div>
+        <div class="base"></div>
+      </div>
+      <div>
+        <span class="tag">Página web</span>
+        <h3>WILLDEX · <span class="serif">aire acondicionado</span></h3>
+        <p>Sitio para una empresa de climatización de Tlaxco, Tlaxcala, que trabaja en naves industriales, centros comerciales y plantas en toda la República.</p>
+        <ul class="roles">
+          <li><b>Portada con video</b><span>Video aéreo de sus obras, cifras de experiencia y botón a WhatsApp.</span></li>
+          <li><b>Galería y proyectos</b><span>Fotos con filtros por categoría y tabla de sus obras de gran escala.</span></li>
+          <li><b>Panel de edición</b><span>El cliente agrega obras, fotos y datos de contacto sin tocar código.</span></li>
+        </ul>
+        <a class="btn solid wa" data-s="Página web" href="#contacto">Quiero una página así</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band fbband" id="facebook">
+  <div class="wrap">
+    <div class="fbbig" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8V6.3c0-.8.2-1.3 1.4-1.3H17V2.2c-.3 0-1.3-.2-2.5-.2C12 2 10.5 3.5 10.5 6.1V8H8v3.2h2.5V22H14V11.2h2.6L17 8z"/></svg></div>
+    <div>
+      <h2>Mira más diseños <span class="serif">en Facebook</span></h2>
+      <p>Ahí publico mis invitaciones más recientes, reels y promociones. Sígueme para no perderte nada y escríbeme por Messenger cuando quieras.</p>
+    </div>
+    <a class="fbbtn fb" href="#"><svg class="fbicon" viewBox="0 0 24 24" fill="currentColor"><path d="M14 8V6.3c0-.8.2-1.3 1.4-1.3H17V2.2c-.3 0-1.3-.2-2.5-.2C12 2 10.5 3.5 10.5 6.1V8H8v3.2h2.5V22H14V11.2h2.6L17 8z"/></svg>Visitar mi página</a>
+  </div>
+</section>
+
+<section class="band" id="proceso">
+  <div class="wrap">
+    <div class="head">
+      <h2>Así <span class="serif">trabajamos</span></h2>
+      <p class="lead">Un proceso sencillo y cercano. Te mantengo al tanto en cada paso por WhatsApp.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><span class="serif">Primero</span><h3>Platicamos</h3><p>Me cuentas qué necesitas, para cuándo y tu presupuesto.</p></div>
+      <div class="step"><span class="serif">Después</span><h3>Propuesta</h3><p>Te envío una idea de diseño y una cotización clara.</p></div>
+      <div class="step"><span class="serif">Luego</span><h3>Diseño y ajustes</h3><p>Construyo tu proyecto y lo afinamos juntos hasta que te encante.</p></div>
+      <div class="step"><span class="serif">Al final</span><h3>Entrega</h3><p>Lo publico, te lo entrego listo para compartir y te acompaño después.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band contact" id="contacto">
+  <div class="wrap">
+    <div>
+      <h2>Cuéntame tu <span class="serif">proyecto</span></h2>
+      <p class="lead" style="margin-top:16px">Llena el formulario y se abrirá WhatsApp con tu mensaje listo para enviar. Te respondo lo antes posible.</p>
+      <div class="info">
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Apan, Hidalgo · Atención en todo México</span></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7z"/></svg><span>WhatsApp: <a class="wa" id="waText" href="#contacto"></a></span></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v6h4v-6h3l1-4h-4V8z"/></svg><span>Facebook: <a id="fb" href="https://www.facebook.com/share/1GEriJMW9g/" target="_blank" rel="noopener">AS Estudio Digital</a></span></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span>Correo: <a href="mailto:adolfodesixto17@gmail.com">adolfodesixto17@gmail.com</a></span></div>
+      </div>
+      <a class="fbbtn fb" href="#"><svg class="fbicon" viewBox="0 0 24 24" fill="currentColor"><path d="M14 8V6.3c0-.8.2-1.3 1.4-1.3H17V2.2c-.3 0-1.3-.2-2.5-.2C12 2 10.5 3.5 10.5 6.1V8H8v3.2h2.5V22H14V11.2h2.6L17 8z"/></svg>Síguenos en Facebook</a>
+    </div>
+    <form id="f" novalidate>
+      <div class="two">
+        <label>Tu nombre<input id="nombre" required autocomplete="name"></label>
+        <label>Servicio
+          <select id="servicio"><option>Página web</option><option>App</option><option>Invitación digital</option><option>Otro</option></select>
+        </label>
+      </div>
+      <label>Fecha del evento o entrega deseada (opcional)<input id="fecha" placeholder="Ej. 14 de marzo"></label>
+      <label>Cuéntame tu idea<textarea id="msg" placeholder="Ej. Necesito una invitación para la boda de mi hermana, con música y mapa."></textarea></label>
+      <button class="btn solid" type="submit">Enviar por WhatsApp</button>
+      <p id="ok" role="status"></p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <span class="serif">AS Estudio Digital</span>
+  Páginas web · Apps · Invitaciones digitales · Apan, Hidalgo<br>
+  WhatsApp 246 187 7400 · <a href="mailto:adolfodesixto17@gmail.com">adolfodesixto17@gmail.com</a> · <a href="https://www.facebook.com/share/1GEriJMW9g/" target="_blank" rel="noopener">Facebook</a> · © <span id="y"></span>
+</footer>
+
+<script>
+{
+  // ▼ Cambia aquí tu número de WhatsApp (52 + 10 dígitos, sin espacios)
+  const WHATSAPP = '522461877400';
+  const shown = WHATSAPP.replace(/^52(\d{3})(\d{3})(\d{4})$/, '$1 $2 $3');
+  const link = t => 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(t);
+  const hello = 'Hola, AS Estudio Digital. Me interesa cotizar ';
+
+  const waText = document.getElementById('waText');
+  waText.textContent = shown;
+  waText.href = link(hello + 'un proyecto.');
+  waText.target = '_blank'; waText.rel = 'noopener';
+
+  for (const a of document.querySelectorAll('a.wa:not(#waText)')) {
+    const art = {'Página web':'una página web','App':'una app','Invitación digital':'una invitación digital'};
+    a.href = link(hello + (art[a.dataset.s] || 'un proyecto') + '.');
+    a.target = '_blank'; a.rel = 'noopener';
+  }
+
+  const f = document.getElementById('f'), ok = document.getElementById('ok');
+  const sel = document.getElementById('servicio');
+  for (const a of document.querySelectorAll('[data-s]')) a.addEventListener('click', () => { sel.value = a.dataset.s; });
+
+  f.addEventListener('submit', e => {
+    e.preventDefault();
+    const n = document.getElementById('nombre');
+    if (!n.value.trim()) { ok.textContent = 'Escribe tu nombre para continuar.'; n.focus(); return; }
+    const fecha = document.getElementById('fecha').value.trim();
+    const msg = document.getElementById('msg').value.trim();
+    const t = 'Hola, soy ' + n.value.trim() + '. Me interesa: ' + sel.value + '.' +
+      (fecha ? '\nFecha: ' + fecha + '.' : '') + (msg ? '\n' + msg : '');
+    const url = link(t);
+    const w = window.open(url, '_blank', 'noopener');
+    if (!w) location.href = url;
+    ok.textContent = 'Abriendo WhatsApp… si no se abre, escríbeme al ' + shown + '.';
+  });
+
+  // Portafolio: reproducir solo los videos visibles, botón de sonido
+  const ON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 9h4l5-4v14l-5-4H4z"/><path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/></svg>';
+  const OFF = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 9h4l5-4v14l-5-4H4z"/><path d="M17 9l5 6M22 9l-5 6"/></svg>';
+  const vids = [...document.querySelectorAll('.device video, .laptop video')];
+  const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  for (const v of vids) {
+    const b = v.nextElementSibling;
+    b.innerHTML = OFF;
+    b.addEventListener('click', () => {
+      const unmute = v.muted;
+      for (const o of vids) { o.muted = true; o.nextElementSibling.innerHTML = OFF; o.nextElementSibling.setAttribute('aria-label', 'Activar sonido'); }
+      if (unmute) { v.muted = false; b.innerHTML = ON; b.setAttribute('aria-label', 'Silenciar'); v.play().catch(() => {}); }
+    });
+  }
+  if ('IntersectionObserver' in window && !calm) {
+    const io = new IntersectionObserver(es => {
+      for (const e of es) e.isIntersecting ? e.target.play().catch(() => {}) : e.target.pause();
+    }, { threshold: .5 });
+    for (const v of vids) io.observe(v);
+  } else for (const v of vids) v.controls = true;
+
+  const FACEBOOK = 'https://www.facebook.com/share/1GEriJMW9g/';
+  for (const a of document.querySelectorAll('a.fb')) { a.href = FACEBOOK; a.target = '_blank'; a.rel = 'noopener'; }
+
+  document.getElementById('y').textContent = new Date().getFullYear();
+}
+</script>
+</body>
+</html>
