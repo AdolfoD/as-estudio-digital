@@ -123,10 +123,11 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px
 .laptop video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;background:#0e1222}
 .laptop .base{height:14px;margin:0 -4%;background:linear-gradient(#3a4466,#232b47);border-radius:0 0 14px 14px;box-shadow:0 30px 50px -20px rgba(0,0,0,.7)}
 .laptop .snd{bottom:22px;right:22px}
-.tablet{position:relative;background:#0b0f1d;border-radius:34px;padding:18px 26px;box-shadow:0 0 0 1px #3a4466,0 0 0 4px #1f2640,0 40px 70px -25px rgba(0,0,0,.75)}
-.tablet::before{content:"";position:absolute;left:11px;top:50%;width:7px;height:7px;margin-top:-3.5px;border-radius:50%;background:#2a3456;box-shadow:inset 0 0 0 1.5px #3c4a78}
-.tablet video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px;background:#0e1222}
-.tablet .snd{bottom:30px;right:38px}
+.tablet{position:relative;width:min(100%,310px);margin:0 auto;background:#0b0f1d;border-radius:48px;padding:11px;box-shadow:0 0 0 1px #3a4466,0 0 0 4px #1f2640,0 40px 70px -25px rgba(0,0,0,.75)}
+.tablet::before,.tablet::after{content:"";position:absolute;right:-6px;width:4px;border-radius:0 3px 3px 0;background:#2a3456}
+.tablet::before{top:120px;height:70px}.tablet::after{top:200px;height:44px}
+.tablet video{display:block;width:100%;aspect-ratio:540/1170;object-fit:cover;border-radius:38px;background:#0e1222}
+.tablet .snd{bottom:24px;right:24px}
 .tag{display:inline-block;font-size:13px;border:1px solid var(--champ2);color:var(--champ2);border-radius:999px;padding:4px 12px;margin-bottom:14px}
 .appshow h3{font-size:clamp(30px,3.4vw,40px);margin-bottom:12px}
 .appshow p{color:var(--soft)}
@@ -321,7 +322,7 @@ footer .serif{font-size:22px;color:var(--champ);display:block;margin-bottom:6px}
 
     <div class="appshow">
       <div class="tablet">
-          <video src="videos/mandaditos-demo.mp4" poster="videos/mandaditos-demo.jpg" muted loop playsinline preload="metadata" aria-label="Demostración de la app Mandaditos"></video>
+          <video src="videos/mandaditos-celular.mp4" poster="videos/mandaditos-celular.jpg" muted loop playsinline preload="metadata" aria-label="Demostración de la app Mandaditos"></video>
           <button class="snd" type="button" aria-label="Activar sonido"></button>
       </div>
       <div>
